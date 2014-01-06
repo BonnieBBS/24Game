@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+CONFIG += c++11
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -14,10 +15,12 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    myprofile.cpp
+    myprofile.cpp \
+    rosetta.cpp
 
 HEADERS  += mainwindow.h \
-    myprofile.h
+    myprofile.h \
+    rosetta.h
 
 FORMS    += mainwindow.ui \
     myprofile.ui
