@@ -17,12 +17,16 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     myprofile.cpp \
     rosetta.cpp \
-    counter.cpp
+    counter.cpp \
+    gamer.cpp \
+    newGamerDialog[Abandon].cpp
 
 HEADERS  += mainwindow.h \
     myprofile.h \
     rosetta.h \
-    counter.h
+    counter.h \
+    gamer.h \
+    newGamerDialog[Abandoned].h
 
 FORMS    += mainwindow.ui \
     myprofile.ui

@@ -11,6 +11,8 @@ int main(int argc, char *argv[])
     int screenWidth = wid.screen()->width();
     int screenHeight = wid.screen()->height();
     MainWindow w;
+    w.forConnections();
+    w.makeConnections();
     int width = w.frameGeometry().width();
     int height = w.frameGeometry().height();
     w.setGeometry((screenWidth/2)-(width/2),(screenHeight/2)-(height/2),width,height);

@@ -34,7 +34,7 @@ class RPNParse
 
         void parse(string s)
         {
-            for(int i = 0; i < s.size(); ++i)
+            for(unsigned int i = 0; i < s.size(); ++i)
                 parse(s[i]);
         }
 
@@ -73,9 +73,13 @@ multiset<int> rosetta()
     return digits0;
 }
 
+bool correctness;
+
 string judgeAns(string input, multiset<int> digits0)
 {
     RPNParse parser;
+
+    correctness = false;
 
     try
     {
@@ -100,12 +104,13 @@ string judgeAns(string input, multiset<int> digits0)
             if(r > 23.999 && r < 24.001)
             {
                 cout << "Good job!" << endl;
+                correctness = true;
                 return "\nGood job!";
             }
             else
             {
                 cout << "Try again." << endl;
-                return "\nTry again.";
+                return "\nWrong Answer.";
             }
         }
     }
@@ -114,4 +119,9 @@ string judgeAns(string input, multiset<int> digits0)
         cout << "Error: " << e << endl;
         return "\nError";
     }
+}
+
+bool getCorrectness()
+{
+    return correctness;
 }

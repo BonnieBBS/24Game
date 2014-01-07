@@ -18,4 +18,7 @@ multiset<int> rosetta();
 
 string judgeAns(string input, multiset<int> digits0);
 
+bool getCorrectness();
+
+
 #endif // ROSETTA_H

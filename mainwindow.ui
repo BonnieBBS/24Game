@@ -59,8 +59,8 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>110</y>
+      <x>160</x>
+      <y>160</y>
       <width>441</width>
       <height>231</height>
      </rect>
@@ -94,7 +94,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="remainingTimeLabel">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -105,6 +105,67 @@
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Remaining Time&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="gamernameLabel">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>100</y>
+      <width>84</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Gamer Name:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="currentGamerLabel">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>100</y>
+      <width>46</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Unlogin</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="pointsLabel">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>100</y>
+      <width>90</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Current Points:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="currentPointsLabel">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>100</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
     </property>
    </widget>
   </widget>
@@ -130,7 +191,16 @@
     <property name="title">
      <string>&amp;File</string>
     </property>
+    <widget class="QMenu" name="menu_Gamer">
+     <property name="title">
+      <string>&amp;Gamer</string>
+     </property>
+     <addaction name="action_New_Gamer"/>
+     <addaction name="action_Login"/>
+    </widget>
     <addaction name="actionNew_Game"/>
+    <addaction name="menu_Gamer"/>
+    <addaction name="action_Rankings"/>
     <addaction name="actionExit"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
@@ -164,6 +234,21 @@
   <action name="actionNew_Game">
    <property name="text">
     <string>&amp;New Game</string>
+   </property>
+  </action>
+  <action name="action_Rankings">
+   <property name="text">
+    <string>&amp;Rankings</string>
+   </property>
+  </action>
+  <action name="action_New_Gamer">
+   <property name="text">
+    <string>&amp;New Gamer</string>
+   </property>
+  </action>
+  <action name="action_Login">
+   <property name="text">
+    <string>&amp;Login</string>
    </property>
   </action>
  </widget>
