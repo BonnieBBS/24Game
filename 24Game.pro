@@ -16,11 +16,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     myprofile.cpp \
-    rosetta.cpp
+    rosetta.cpp \
+    counter.cpp
 
 HEADERS  += mainwindow.h \
     myprofile.h \
-    rosetta.h
+    rosetta.h \
+    counter.h
 
 FORMS    += mainwindow.ui \
     myprofile.ui
