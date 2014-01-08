@@ -61,13 +61,18 @@ void MainWindow::on_actionNew_Game_triggered()
 void MainWindow::on_action_New_Gamer_triggered()
 {
     std::cout << "new gamer" << std::endl;
-    ui->currentGamerLabel->setText("test");
+    ui->currentGamerLabel->setText("");
     bool ok;
     QString text = QInputDialog::getText(this, tr(""),tr("Gamer name:"), QLineEdit::Normal,"", &ok);
     ///connect(this, SIGNAL(userLoggedIn(QString)), ui->currentGamerLabel, SLOT(hide()));
     login = true;
     currentGamer = new Gamer(text.toStdString());
     allGamers->addGamer(currentGamer);
+
+    ui->currentPointsLabel->setText(QString::number(currentGamer->point));
+    ui->label->setText("Please calculate 24 with numbers here ~");
+    ui->lineEdit->setText("");
+    ui->noSolutionCheckBox->setCheckState(Qt::Unchecked);
     emit userLoggedIn(text);
     //Gamer *temp = new Gamer(text.toStdString());
     //allGamers->addGamer(*temp);
@@ -175,6 +180,7 @@ void MainWindow::on_submitButton_clicked()
             currentGamer->addPoint(counter->getCount());
             QSpoint = QString::number(currentGamer->getPoint());
             ui->currentPointsLabel->setText(QSpoint);
+            ui->label->setText(ui->label->text() + " " + "Good Job!");
         }
     }
     else
