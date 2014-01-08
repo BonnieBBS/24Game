@@ -23,7 +23,7 @@
    <widget class="QPushButton" name="startButton">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>90</x>
       <y>420</y>
       <width>80</width>
       <height>23</height>
@@ -36,7 +36,7 @@
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>190</x>
       <y>420</y>
       <width>281</width>
       <height>23</height>
@@ -46,7 +46,7 @@
    <widget class="QPushButton" name="submitButton">
     <property name="geometry">
      <rect>
-      <x>560</x>
+      <x>590</x>
       <y>420</y>
       <width>80</width>
       <height>23</height>
@@ -128,7 +128,7 @@
      <rect>
       <x>300</x>
       <y>100</y>
-      <width>46</width>
+      <width>101</width>
       <height>16</height>
      </rect>
     </property>
@@ -157,7 +157,7 @@
      <rect>
       <x>530</x>
       <y>100</y>
-      <width>16</width>
+      <width>31</width>
       <height>16</height>
      </rect>
     </property>
@@ -166,6 +166,19 @@
     </property>
     <property name="alignment">
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="noSolutionCheckBox">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>420</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>No Solution</string>
     </property>
    </widget>
   </widget>
@@ -191,15 +204,8 @@
     <property name="title">
      <string>&amp;File</string>
     </property>
-    <widget class="QMenu" name="menu_Gamer">
-     <property name="title">
-      <string>&amp;Gamer</string>
-     </property>
-     <addaction name="action_New_Gamer"/>
-     <addaction name="action_Login"/>
-    </widget>
     <addaction name="actionNew_Game"/>
-    <addaction name="menu_Gamer"/>
+    <addaction name="action_New_Gamer"/>
     <addaction name="action_Rankings"/>
     <addaction name="actionExit"/>
    </widget>

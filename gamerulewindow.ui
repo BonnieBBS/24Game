@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GameRuleWindow</class>
+ <widget class="QDialog" name="GameRuleWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>689</width>
+    <height>456</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Game Rule</string>
+  </property>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>420</y>
+     <width>80</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&amp;OK</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>30</y>
+     <width>351</width>
+     <height>351</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;游戏参与者进入游戏必须先输入名称，游戏开始，&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;程序随机自动生成四张牌（以&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;－&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;10&lt;/span&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;之间的数值&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;代替），游戏者要求尽快给出表达式，只能使用&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;＋－&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;× &lt;/span&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;％运算。可以使用（），不涉及小数运算。&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;比如机器给出四个数为&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;3&lt;/span&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;、&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;3&lt;/span&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;、&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;6&lt;/span&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;、&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;，游戏者输入&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;表达式：（&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;3&lt;/span&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;＋&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;3&lt;/span&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;－&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;）&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;×6&lt;/span&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;，程序检查运算成功，&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;根据要求&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;3&lt;/span&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;计算时间。如果给出的四个数不能得出&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;24&lt;/span&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;，如：&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;、&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;2&lt;/span&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;、&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;、&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;3&lt;/span&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;，那么游戏者必须输入&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;NO&lt;/span&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;，&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;要求计算机进入下一题，但此次如果是正确判断一&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;样记分。如此玩&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;3&lt;/span&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;次，计算总分。任何一次在要求&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;时间内不能给出表达式或&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;NO&lt;/span&gt;&lt;span style=&quot; font-family:'宋体, SimSun'; font-size:12pt;&quot;&gt;，那么游戏此轮结束。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>GameRuleWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>199</x>
+     <y>271</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

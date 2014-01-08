@@ -19,14 +19,24 @@ SOURCES += main.cpp\
     rosetta.cpp \
     counter.cpp \
     gamer.cpp \
-    newGamerDialog[Abandon].cpp
+    newGamerDialog[Abandon].cpp \
+    answersDatabase.cpp \
+    infix2postfix.cpp \
+    gamerulewindow.cpp
 
 HEADERS  += mainwindow.h \
     myprofile.h \
     rosetta.h \
     counter.h \
     gamer.h \
-    newGamerDialog[Abandoned].h
+    newGamerDialog[Abandoned].h \
+    answersDatabase.h \
+    infix2postfix.h \
+    gamerulewindow.h
 
 FORMS    += mainwindow.ui \
-    myprofile.ui
+    myprofile.ui \
+    gamerulewindow.ui
+
+OTHER_FILES += \
+    allAnswers.dat

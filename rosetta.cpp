@@ -94,7 +94,7 @@ string judgeAns(string input, multiset<int> digits0)
             showMultisetInt(parser.digits);
             cout << "The shown numbers are: ";
             showMultisetInt(digits0);
-            return "\nError: Not using the given digits";
+            return "\nWRONG: Not using the given digits.";
         }
         else
         {
@@ -105,6 +105,7 @@ string judgeAns(string input, multiset<int> digits0)
             {
                 cout << "Good job!" << endl;
                 correctness = true;
+                cout << "The correctness is " << correctness << endl;
                 return "\nGood job!";
             }
             else

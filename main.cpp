@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
     QDesktopWidget wid;
     int screenWidth = wid.screen()->width();
     int screenHeight = wid.screen()->height();
+
     MainWindow w;
     w.forConnections();
     w.makeConnections();

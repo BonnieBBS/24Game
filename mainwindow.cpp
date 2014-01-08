@@ -13,9 +13,14 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+multiset<int> digits1;
+bool flag;
+Answer answer;
+
 void MainWindow::forConnections()
 {
     timeupMessageBox->setText("Time's up !!!");
+    // answerMessageBox->setText(QString::fromStdString(answer.second.s));
 }
 
 void MainWindow::makeConnections()
@@ -29,6 +34,8 @@ void MainWindow::makeConnections()
 
     connect(this, SIGNAL(submitted()), timer, SLOT(stop()));
     connect(this, SIGNAL(noMoreChance()), timer, SLOT(stop()));
+
+    connect(this, SIGNAL(wrong()), answerMessageBox, SLOT(exec()));
 }
 
 void MainWindow::on_actionAbout_triggered()
@@ -39,7 +46,8 @@ void MainWindow::on_actionAbout_triggered()
 
 void MainWindow::on_actionContent_triggered()
 {
-
+    GameRuleWindow *grw = new GameRuleWindow(this);
+    grw->show();
 }
 
 void MainWindow::on_actionNew_Game_triggered()
@@ -55,7 +63,7 @@ void MainWindow::on_action_New_Gamer_triggered()
     std::cout << "new gamer" << std::endl;
     ui->currentGamerLabel->setText("test");
     bool ok;
-    QString text = QInputDialog::getText(this, tr("Enter Name"),tr("User name:"), QLineEdit::Normal,"", &ok);
+    QString text = QInputDialog::getText(this, tr(""),tr("Gamer name:"), QLineEdit::Normal,"", &ok);
     ///connect(this, SIGNAL(userLoggedIn(QString)), ui->currentGamerLabel, SLOT(hide()));
     login = true;
     currentGamer = new Gamer(text.toStdString());
@@ -84,9 +92,6 @@ void MainWindow::on_action_Rankings_triggered()
 
 }
 
-multiset<int> digits1;
-bool flag;
-
 void MainWindow::on_startButton_clicked()
 {
     /////timer.restart();
@@ -102,7 +107,14 @@ void MainWindow::on_startButton_clicked()
         else
         {
             currentGamer->addGameTimes();
+
             digits1 = rosetta();
+
+            std::cout << "!!!!!!!!!Show answer!!!!!!!!!" << std::endl;
+            answer.first = digits1;
+            answer.second = answerDatabase->getSolution(digits1);
+            showAnswer(answer);
+
             string fournumbers;
             for(auto iter = digits1.begin(); iter != digits1.end(); iter++)
             {
@@ -145,26 +157,51 @@ void MainWindow::on_submitButton_clicked()
     emit submitted();
     flag = false;
     cout << "Sumbit was pushed." << endl;
-    string ans = (ui->lineEdit->text()).toStdString();
-    cout << "The input is: " << ans << endl;
-    // showMultisetInt(digits1);
-    string judgeans = judgeAns(ans, digits1);
     QString QSpoint = QString::number(currentGamer->getPoint());
-    if(getCorrectness())
+    if(ui->noSolutionCheckBox->isChecked())
     {
-        currentGamer->addPoint(counter->getCount());
-        ui->currentPointsLabel->setText(QSpoint);
+        std::cout << "No solution." << std::endl;
+        if(answer.second.hasSolution)
+        {
+            // Wrong
+            std::cout << answer.second.s << std::endl;
+            answerMessageBox->setText("WRONG!!!\nIt has solution:\n" + QString::fromStdString(answer.second.s));
+            emit wrong();
+        }
+        else
+        {
+            // Right
+            //emit right();
+            currentGamer->addPoint(counter->getCount());
+            QSpoint = QString::number(currentGamer->getPoint());
+            ui->currentPointsLabel->setText(QSpoint);
+        }
     }
-    cout << "The judge is: " << judgeans << endl;
-    QString judge = QString::fromStdString(judgeans);
-    ui->label->setText(ui->label->text() + " " + judge);
-    cout << "*********************TIME*********************" << endl;
-    /////cout << timer.elapsed();
-    cout << "here" << endl;
+    else
+    {
+        string input = (ui->lineEdit->text()).toStdString();
+        cout << "The input is: " << input << endl;
+        // showMultisetInt(digits1);
+        string postfixInput = infix2postfix(input);
+        string judgeans = judgeAns(postfixInput, digits1) + "\n\nThe reference answer is:\n" + answer.second.s;
+        QSpoint = QString::number(currentGamer->getPoint());
+        if(getCorrectness())
+        {
+            currentGamer->addPoint(counter->getCount());
+            QSpoint = QString::number(currentGamer->getPoint());
+            ui->currentPointsLabel->setText(QSpoint);
+        }
+        cout << "The judge is: " << judgeans << endl;
+        QString judge = QString::fromStdString(judgeans);
+        ui->label->setText(ui->label->text() + " " + judge);
+        cout << "*********************TIME*********************" << endl;
+        cout << "here" << endl;
+    }
 
     if(currentGamer->getGameTimes()==3)
     {
         emit noMoreChance();
+        QSpoint = QString::number(currentGamer->getPoint());
         QMessageBox::information(this, tr("Final Points"), tr("Your points is ")+QSpoint);
     }
 }

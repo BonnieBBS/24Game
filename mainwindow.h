@@ -8,9 +8,12 @@
 #include <QInputDialog>
 #include <vector>
 #include "myprofile.h"
+#include "gamerulewindow.h"
 #include "rosetta.h"
 #include "counter.h"
 #include "gamer.h"
+#include "answersDatabase.h"
+#include "infix2postfix.h"
 
 //#include "newGamerDialog.h"
 
@@ -26,14 +29,17 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+    AnswerDatabase* answerDatabase = new AnswerDatabase("/home/bonnie/Projects/MyQt/24Game/allAnswers.dat");
+
     // Signals & Slots
     QMessageBox *timeupMessageBox = new QMessageBox(this);
+    QMessageBox *answerMessageBox = new QMessageBox(this);
     void forConnections();
     void makeConnections();
 
     // Timing
     Counter *counter = new Counter(100);
-    QTimer *timer = new QTimer(counter);  
+    QTimer *timer = new QTimer(counter);
 
     // Gamer Management
     GamersVector *allGamers = new GamersVector();
@@ -44,6 +50,8 @@ signals:
     QString userLoggedIn(QString s);
     void submitted();
     void noMoreChance();
+    void right();
+    void wrong();
 
 private slots:
     void on_actionAbout_triggered();
